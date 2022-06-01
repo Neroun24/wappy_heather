@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:simple_location_picker/simple_location_picker_screen.dart';
 import 'package:simple_location_picker/simple_location_result.dart';
@@ -9,15 +10,15 @@ import '../models/weather.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 class Weather extends StatefulWidget {
-  Weather({required Key key}) : super(key: key);
+  const Weather({Key key}) : super(key: key);
 
   @override
   _WeatherState createState() => _WeatherState();
 }
 
 class _WeatherState extends State<Weather> {
-  late WeatherData weather;
-  late SimpleLocationResult selectedLocation;
+WeatherData weather;
+SimpleLocationResult selectedLocation;
 
   @override
   Widget build(BuildContext context) {
@@ -76,12 +77,8 @@ class _WeatherState extends State<Weather> {
                                     color: Colors.white,
                                   ),
                                   onPressed: () {
-                                    double latitude = selectedLocation != null
-                                        ? selectedLocation.latitude
-                                        : 54.98084308771895;
-                                    double longitude = selectedLocation != null
-                                        ? selectedLocation.longitude
-                                        :  73.37286426016819;
+                                    double latitude = selectedLocation.latitude;
+                                    double longitude = selectedLocation.longitude;
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(

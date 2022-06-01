@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:simple_location_picker/simple_location_result.dart';
@@ -7,7 +8,7 @@ import 'package:http/http.dart';
 
 
 import '../models/weather.dart';class Loading extends StatefulWidget {
-  Loading({required Key key}) : super(key: key);
+  const Loading({Key key}) : super(key: key);
 
   @override
   _LoadingState createState() => _LoadingState();
@@ -15,7 +16,7 @@ import '../models/weather.dart';class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading>{
   String apiKey="a067c8f6765598d3b922ee768efbfdd1";
-  late SimpleLocationResult arguments;
+  SimpleLocationResult arguments;
   getData({lat,lon})async{
     String latitude=lat==null?"54.980838475370945"   :lat.toString();
     String longitude=lon==null?"73.37289239157745"   :lon.toString();
